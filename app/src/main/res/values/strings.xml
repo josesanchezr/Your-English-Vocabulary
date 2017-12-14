@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Your English Vocabulary</string>
+    <string name="your_english_text">Your English</string>
+    <string name="vocabulary_text">Vocabulary</string>
+    <string name="save_new_word_text">Save New Word</string>
+    <string name="practice_text">Practice!</string>
+    <string name="title_activity_save_new_word">SaveNewWordActivity</string>
+    <string name="tab_text_1">Word</string>
+    <string name="tab_text_2">Examples</string>
+    <string name="word_english_text">Word in English</string>
+    <string name="word_spanish_text">Word in Spanish</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="kind_word_text">Kind of Word</string>
+    <string name="pronoun_text">Pronoun</string>
+    <string name="adjective_text">Adjective</string>
+    <string name="adverb_text">Adverb</string>
+    <string name="regular_verb_text">Regular Verb</string>
+    <string name="irregular_verb_text">Irregular Verb</string>
+    <string name="preposition_text">Preposition</string>
+    <string name="url_image_text">Url from the imagen</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "588622889863",
+    "project_id": "firebase-your-english-vocabula"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588622889863:android:848a17d3accc7c2e",
+        "android_client_info": {
+          "package_name": "com.example.android.yourenglishvocabulary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588622889863-o54f7j9bscajim2ttrh7g3kp8u4vesd8.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "588622889863-phv7d7htufjjl8ef6i5ks68fnngrkdqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.yourenglishvocabulary",
+            "certificate_hash": "2c3493de30ce0cfc19cf6ed998046079d9eda5aa"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx9k0s6a8O4ex-YjhTVDO7kwAq6tXgJSc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
