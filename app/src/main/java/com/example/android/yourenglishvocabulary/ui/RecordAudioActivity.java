@@ -2,10 +2,9 @@ package com.example.android.yourenglishvocabulary.ui;
 
 import android.app.Activity;
 import android.media.MediaRecorder;
-import android.os.Environment;
+import android.os.FileObserver;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -13,8 +12,8 @@ import android.widget.Toast;
 
 import com.example.android.yourenglishvocabulary.R;
 import com.example.android.yourenglishvocabulary.audio.MediaRecordUtil;
+import com.example.android.yourenglishvocabulary.drive.AudioFileObserver;
 
-import java.io.File;
 import java.io.IOException;
 
 public class RecordAudioActivity extends Activity implements VoiceView.OnRecordListener {
@@ -52,6 +51,10 @@ public class RecordAudioActivity extends Activity implements VoiceView.OnRecordL
         Log.d(TAG, "onRecordStart");
         try {
             mMediaRecorder = MediaRecordUtil.buildMediaRecord(fileName, this);
+
+            FileObserver audioFileObserver = new AudioFileObserver(fileName,
+                    MediaRecordUtil.buildAudioFilePath(fileName, this), FileObserver.CLOSE_WRITE, this);
+            audioFileObserver.startWatching();
 
             mMediaRecorder.prepare();
             mMediaRecorder.start();
