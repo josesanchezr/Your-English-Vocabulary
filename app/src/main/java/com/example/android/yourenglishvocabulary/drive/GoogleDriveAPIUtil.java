@@ -1,7 +1,6 @@
 package com.example.android.yourenglishvocabulary.drive;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -17,9 +16,10 @@ import com.google.android.gms.drive.MetadataChangeSet;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 /**
  * Created by joseluis on 16/12/2017.
@@ -107,5 +107,57 @@ public class GoogleDriveAPIUtil {
                 .addOnFailureListener(activity, (e) -> {
                     Log.e(TAG, "Error creating file " + fileName + ".jpg into the YourEnglishVocabulary Folder: " + e);
                 });
+    }
+
+    public static void createAudioFileInAppFolder(Activity activity, String fileName, String audioFilePath) {
+        Log.d(TAG, "Start createAudioFileInAppFolder");
+        final Task<DriveContents> createContentsTask = getDriveResourceClient().createContents();
+        Tasks.whenAll(createContentsTask)
+                .continueWithTask((task) -> {
+                    Log.d(TAG, "Creating file of audio " + fileName + ".mp3 into the AppFolder");
+
+                    DriveContents contents = createContentsTask.getResult();
+                    OutputStream outputStream = contents.getOutputStream();
+                    Log.d(TAG, "Reading audio file on : " + audioFilePath);
+                    FileInputStream fileInputStream = new FileInputStream(audioFilePath);
+                    outputStream.write(convertStreamToByteArray(fileInputStream));
+
+                    MetadataChangeSet changeSet = new MetadataChangeSet.Builder()
+                            .setTitle(fileName)
+                            .setMimeType("audio/mp3")
+                            .setStarred(true)
+                            .build();
+
+                    return getDriveResourceClient().createFile(getYourEnglishVocabularyFolder(), changeSet, contents);
+                })
+                .addOnSuccessListener(activity, (driveFile) -> {
+                    Log.d(TAG, "File " + fileName + ".mp3 created into the YourEnglishVocabulary Folder");
+                })
+                .addOnFailureListener(activity, (e) -> {
+                    Log.e(TAG, "Error creating file " + fileName + ".mp3 into the YourEnglishVocabulary Folder: " + e);
+                });
+    }
+
+    private static byte[] convertStreamToByteArray(FileInputStream inputStream) {
+        ByteArrayOutputStream byteOutStream = new ByteArrayOutputStream();
+        int readByte = 0;
+        byte[] buffer = new byte[2024];
+        try {
+            while (true) {
+                readByte = inputStream.read(buffer);
+                if (readByte == -1) {
+                    break;
+                }
+                byteOutStream.write(buffer, 0, readByte);
+            }
+            inputStream.close();
+            byteOutStream.flush();
+            byteOutStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        byte[] byteArray = byteOutStream.toByteArray();
+        return byteArray;
     }
 }
