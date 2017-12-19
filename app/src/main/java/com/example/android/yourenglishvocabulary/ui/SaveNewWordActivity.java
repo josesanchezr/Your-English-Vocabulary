@@ -31,18 +31,8 @@ import com.example.android.yourenglishvocabulary.photo.PhotoLoader;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.drive.Drive;
-import com.google.android.gms.drive.DriveContents;
-import com.google.android.gms.drive.DriveFolder;
-import com.google.android.gms.drive.DriveResourceClient;
-import com.google.android.gms.drive.MetadataChangeSet;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.squareup.picasso.Picasso;
-
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,8 +46,6 @@ public class SaveNewWordActivity extends AppCompatActivity implements TabWordFra
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
-    private static final String TITLE_ACTIVITY = "Save New Word";
 
     public static String ACTIVE_TAG;
     public static final String EXAMPLES_TAG = "EXAMPLES";
@@ -94,7 +82,7 @@ public class SaveNewWordActivity extends AppCompatActivity implements TabWordFra
         // Set up the ViewPager with the sections adapter.
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
@@ -201,7 +189,7 @@ public class SaveNewWordActivity extends AppCompatActivity implements TabWordFra
     @Override
     public void updateImage(String urlImage, String nameNewWord, FragmentActivity view) {
 
-        imageNewWordImageView = (ImageView) view.findViewById(R.id.image_new_word_imageview);
+        imageNewWordImageView = view.findViewById(R.id.image_new_word_imageview);
 
         Picasso.with(this)
                 .load(urlImage)
