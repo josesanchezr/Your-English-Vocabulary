@@ -87,11 +87,13 @@ public class RecordAudioActivity extends Activity implements VoiceView.OnRecordL
 
     @Override
     protected void onDestroy() {
-        if (mIsRecording) {
-            mMediaRecorder.stop();
-            mIsRecording = false;
+        if (mMediaRecorder != null) {
+            if (mIsRecording) {
+                mMediaRecorder.stop();
+                mIsRecording = false;
+            }
+            mMediaRecorder.release();
         }
-        mMediaRecorder.release();
         super.onDestroy();
     }
 }
