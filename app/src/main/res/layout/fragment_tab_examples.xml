@@ -1,23 +1,248 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/container_examples_tab"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.yourenglishvocabulary.ui.TabExamplesFragment">
 
-    <TextView
-        android:id="@+id/section_label"
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint_examples_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/container_example1"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/example1_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_example_text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/play_example1_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/container_example1"
+                app:layout_constraintTop_toTopOf="@id/container_example1" />
+
+            <ImageView
+                android:id="@+id/record_example1_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example1"
+                app:layout_constraintLeft_toRightOf="@id/container_example1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_example1" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/container_example2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_example1">
+
+                <EditText
+                    android:id="@+id/example2_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/second_example_text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/play_example2_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/container_example2"
+                app:layout_constraintTop_toTopOf="@id/container_example2" />
+
+            <ImageView
+                android:id="@+id/record_example2_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example2"
+                app:layout_constraintLeft_toRightOf="@id/container_example2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_example2" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/container_example3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_example2">
+
+                <EditText
+                    android:id="@+id/example3_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/third_example_text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/play_example3_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/container_example3"
+                app:layout_constraintTop_toTopOf="@id/container_example3" />
+
+            <ImageView
+                android:id="@+id/record_example3_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example3"
+                app:layout_constraintLeft_toRightOf="@id/container_example3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_example3" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/container_example4"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_example3">
+
+                <EditText
+                    android:id="@+id/example4_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fourth_example_text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/play_example4_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/container_example4"
+                app:layout_constraintTop_toTopOf="@id/container_example4" />
+
+            <ImageView
+                android:id="@+id/record_example4_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example4"
+                app:layout_constraintLeft_toRightOf="@id/container_example4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_example4" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/container_example5"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_example4">
+
+                <EditText
+                    android:id="@+id/example5_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fifth_example_text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/play_example5_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/container_example5"
+                app:layout_constraintTop_toTopOf="@id/container_example5" />
+
+            <ImageView
+                android:id="@+id/record_example5_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/container_example5"
+                app:layout_constraintLeft_toRightOf="@id/container_example5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/container_example5" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_example_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:text="Examples"/>
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginTop="-16dp"
+        android:elevation="@dimen/fab_elevation"
+        app:pressedTranslationZ="@dimen/fab_pressed"
+        app:srcCompat="@android:drawable/ic_menu_save" />
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
