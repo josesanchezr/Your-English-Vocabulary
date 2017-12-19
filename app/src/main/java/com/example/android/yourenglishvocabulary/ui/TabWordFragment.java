@@ -59,13 +59,15 @@ public class TabWordFragment extends Fragment {
     ImageView playWordImageView;
 
     private String selectedKindWord;
-    private static long idWord;
+    public static long idWord;
+    public static String word;
     private MediaPlayer mPlayer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         idWord = 0;
+        word = "";
     }
 
     @Override
@@ -198,6 +200,7 @@ public class TabWordFragment extends Fragment {
             long id = ContentUris.parseId(newUri);
             if (id > 0) {
                 idWord = id;
+                word = wordEnglishEditText.getText().toString();
                 Snackbar.make(view, "The word " + wordEnglishEditText.getText().toString() +
                         " was inserted with success with id: " + id, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -210,13 +213,14 @@ public class TabWordFragment extends Fragment {
 
                 String id = cursor.getString(indexId);
                 mSelectionArgs[0] = id;
-                idWord = Long.parseLong(id);
                 int mRowsUpdated = getActivity().getContentResolver().update(WordsContract.WordsEntry.CONTENT_URI,
                         wordContentValues,
                         WordsContract.WordsEntry._ID + " = ?",
                         mSelectionArgs);
 
                 if (mRowsUpdated > 0) {
+                    idWord = Long.parseLong(id);
+                    word = wordEnglishEditText.getText().toString();
                     Snackbar.make(view, "The word " + wordEnglishEditText.getText().toString() +
                             " was updated with success with id: " + idWord, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
