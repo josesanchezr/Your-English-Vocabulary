@@ -19,4 +19,9 @@
     <string name="irregular_verb_text">Irregular Verb</string>
     <string name="preposition_text">Preposition</string>
     <string name="url_image_text">Url from the imagen</string>
+    <string name="first_example_text">First Example</string>
+    <string name="second_example_text">Second Example</string>
+    <string name="third_example_text">Third Example</string>
+    <string name="fourth_example_text">Fourth Example</string>
+    <string name="fifth_example_text">Fifth Example</string>
 </resources>
