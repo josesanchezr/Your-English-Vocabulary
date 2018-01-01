@@ -25,12 +25,14 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        saveNewWordButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SaveNewWordActivity.class);
-                view.getContext().startActivity(intent);
-            }
+        saveNewWordButton.setOnClickListener((view) -> {
+            Intent intent = new Intent(view.getContext(), SaveNewWordActivity.class);
+            view.getContext().startActivity(intent);
+        });
+
+        practiceButton.setOnClickListener((view) -> {
+            Intent intent = new Intent(view.getContext(), PracticeYourEnglishActivity.class);
+            view.getContext().startActivity(intent);
         });
     }
 }
