@@ -4,7 +4,12 @@
     <string name="vocabulary_text">Vocabulary</string>
     <string name="save_new_word_text">Save New Word</string>
     <string name="practice_text">Practice!</string>
+
+    <!-- title of activities -->
     <string name="title_activity_save_new_word">SaveNewWordActivity</string>
+    <string name="title_activity_practice_your_english">Practice Your English!</string>
+    <string name="title_activity_word_vs_words">Word vs Words!</string>
+
     <string name="tab_text_1">Word</string>
     <string name="tab_text_2">Examples</string>
     <string name="word_english_text">Word in English</string>
@@ -24,4 +29,22 @@
     <string name="third_example_text">Third Example</string>
     <string name="fourth_example_text">Fourth Example</string>
     <string name="fifth_example_text">Fifth Example</string>
+
+    <!-- placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="word_vs_words_text">Word vs Words</string>
+    <string name="word_vs_images_text">Word vs Images</string>
+    <string name="sound_vs_words_text">Sound vs Words</string>
+    <string name="sound_vs_images_text">Sound vs Images</string>
+    <string name="image_vs_words_text">Image vs Words</string>
+    <string name="word_text"><u>Word</u></string>
+    <string name="options_text"><u>Options</u></string>
+    <string name="valid_text">Valid</string>
+    <string name="next_text">Next</string>
+    <string name="option3_text">option 3</string>
+    <string name="option4_text">option 4</string>
+    <string name="option2_text">option 2</string>
+    <string name="option1_text">option 1</string>
+
+
 </resources>
