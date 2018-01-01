@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.yourenglishvocabulary">
 
-    <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="26" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -41,9 +37,17 @@
 
         <activity
             android:name=".ui.RecordAudioActivity"
-            android:theme="@android:style/Theme.Holo.Dialog">
+            android:theme="@android:style/Theme.Holo.Dialog" />
 
-        </activity>
+        <activity
+            android:name=".ui.PracticeYourEnglishActivity"
+            android:label="@string/title_activity_practice_your_english"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.WordVsWordsActivity"
+            android:label="@string/title_activity_word_vs_words"
+            android:parentActivityName=".ui.PracticeYourEnglishActivity" />
     </application>
 
 </manifest>
