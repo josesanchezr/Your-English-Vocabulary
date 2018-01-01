@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.yourenglishvocabulary.ui.PracticeYourEnglishFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/word_vs_words_button"
+            style="@style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:elevation="2dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:paddingTop="16dp"
+            android:text="@string/word_vs_words_text"
+            android:textSize="18sp"
+            android:translationZ="6dp" />
+
+        <Button
+            android:id="@+id/word_vs_images_button"
+            style="@style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:paddingTop="16dp"
+            android:text="@string/word_vs_images_text"
+            android:textSize="18sp"
+            android:translationZ="6dp" />
+
+        <Button
+            android:id="@+id/sound_vs_words_button"
+            style="@style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:paddingTop="16dp"
+            android:text="@string/sound_vs_words_text"
+            android:textSize="18sp"
+            android:translationZ="6dp" />
+
+        <Button
+            android:id="@+id/sound_vs_images_button"
+            style="@style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:paddingTop="16dp"
+            android:text="@string/sound_vs_images_text"
+            android:textSize="18sp"
+            android:translationZ="6dp" />
+
+        <Button
+            android:id="@+id/image_vs_words_button"
+            style="@style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:paddingTop="16dp"
+            android:text="@string/image_vs_words_text"
+            android:textSize="18sp"
+            android:translationZ="6dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
