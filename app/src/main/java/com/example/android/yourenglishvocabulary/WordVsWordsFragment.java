@@ -3,6 +3,7 @@ package com.example.android.yourenglishvocabulary;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,6 +63,10 @@ public class WordVsWordsFragment extends Fragment {
     @BindView(R.id.word_in_english)
     TextView wordInEnglishTextView;
 
+    private String selectedOptionString;
+    private int selectedOptionInt;
+    private boolean isValidatedQuestion;
+
     public WordVsWordsFragment() {
         // Required empty public constructor
     }
@@ -95,6 +100,8 @@ public class WordVsWordsFragment extends Fragment {
             mOption3 = getArguments().getString(ARG_OPTION3);
             mRightWord = getArguments().getString(ARG_RIGHT_WORD);
         }
+        isValidatedQuestion = false;
+        selectedOptionString = null;
         onAttachToParentFragment(getParentFragment());
     }
 
@@ -106,7 +113,12 @@ public class WordVsWordsFragment extends Fragment {
         ButterKnife.bind(this, rootView);
 
         validButton.setOnClickListener((view) -> {
-            onButtonPressed(view);
+            if (!isValidatedQuestion) {
+                isValidatedQuestion = true;
+                validAnswer(view);
+            } else {
+                nextQuestion(view);
+            }
         });
 
         wordInEnglishTextView.setText(mWord);
@@ -144,18 +156,118 @@ public class WordVsWordsFragment extends Fragment {
         }
 
         option1Button.setOnClickListener((view) -> {
+            selectedOptionInt = 1;
+            selectedOptionString = option1Button.getText().toString();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 option1Button.setBackgroundColor(getResources().getColor(R.color.selectedButton, null));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
             } else {
                 option1Button.setBackgroundColor(getResources().getColor(R.color.selectedButton));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
             }
+        });
 
+        option2Button.setOnClickListener((view) -> {
+            selectedOptionInt = 2;
+            selectedOptionString = option2Button.getText().toString();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                option2Button.setBackgroundColor(getResources().getColor(R.color.selectedButton, null));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+            } else {
+                option2Button.setBackgroundColor(getResources().getColor(R.color.selectedButton));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+        });
+
+        option3Button.setOnClickListener((view) -> {
+            selectedOptionInt = 3;
+            selectedOptionString = option3Button.getText().toString();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                option3Button.setBackgroundColor(getResources().getColor(R.color.selectedButton, null));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+            } else {
+                option3Button.setBackgroundColor(getResources().getColor(R.color.selectedButton));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option4Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+        });
+
+        option4Button.setOnClickListener((view) -> {
+            selectedOptionInt = 4;
+            selectedOptionString = option4Button.getText().toString();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                option4Button.setBackgroundColor(getResources().getColor(R.color.selectedButton, null));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
+            } else {
+                option4Button.setBackgroundColor(getResources().getColor(R.color.selectedButton));
+                option1Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option2Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                option3Button.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
         });
 
         return rootView;
     }
 
-    public void onButtonPressed(View view) {
+    private void validAnswer(View view) {
+        if (selectedOptionString == null) {
+            isValidatedQuestion = false;
+            Snackbar.make(view, "Please, you must select one option", Snackbar.LENGTH_LONG).show();
+        } else {
+            if (mRightWord.equals(selectedOptionString)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    changeButtonColor(selectedOptionInt, getResources().getColor(R.color.rightAnswer, null));
+                    validButton.setBackgroundColor(getResources().getColor(R.color.rightAnswer, null));
+                } else {
+                    changeButtonColor(selectedOptionInt, getResources().getColor(R.color.rightAnswer));
+                    validButton.setBackgroundColor(getResources().getColor(R.color.rightAnswer));
+                }
+                Snackbar.make(view, "Right answer.", Snackbar.LENGTH_LONG).show();
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    changeButtonColor(selectedOptionInt, getResources().getColor(R.color.wrongAnswer, null));
+                    validButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswer, null));
+                } else {
+                    changeButtonColor(selectedOptionInt, getResources().getColor(R.color.wrongAnswer));
+                    validButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswer));
+                }
+                Snackbar.make(view, "Wrong answer.", Snackbar.LENGTH_LONG).show();
+            }
+            validButton.setText(getResources().getString(R.string.next_text));
+        }
+    }
+
+    private void changeButtonColor(int idButton, int colorButton) {
+        switch (idButton) {
+            case 1:
+                option1Button.setBackgroundColor(colorButton);
+                break;
+            case 2:
+                option2Button.setBackgroundColor(colorButton);
+                break;
+            case 3:
+                option3Button.setBackgroundColor(colorButton);
+                break;
+            case 4:
+                option4Button.setBackgroundColor(colorButton);
+                break;
+        }
+    }
+
+    private void nextQuestion(View view) {
         if (mListener != null) {
             mListener.onWordVsWordsFragmentInteraction(view);
         }
