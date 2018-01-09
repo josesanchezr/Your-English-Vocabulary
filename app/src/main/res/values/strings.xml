@@ -9,6 +9,7 @@
     <string name="title_activity_save_new_word">SaveNewWordActivity</string>
     <string name="title_activity_practice_your_english">Practice Your English!</string>
     <string name="title_activity_word_vs_words">Word vs Words!</string>
+    <string name="title_activity_word_vs_images">Word vs Images!</string>
 
     <string name="tab_text_1">Word</string>
     <string name="tab_text_2">Examples</string>
