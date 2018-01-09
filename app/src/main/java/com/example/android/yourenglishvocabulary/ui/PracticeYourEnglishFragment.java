@@ -57,6 +57,11 @@ public class PracticeYourEnglishFragment extends Fragment {
             startActivity(intent);
         });
 
+        wordVsImagesButton.setOnClickListener((view) -> {
+            Intent intent = new Intent(view.getContext(), WordVsImagesActivity.class);
+            startActivity(intent);
+        });
+
         return rootView;
     }
 
