@@ -1,4 +1,4 @@
-package com.example.android.yourenglishvocabulary;
+package com.example.android.yourenglishvocabulary.ui;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.android.yourenglishvocabulary.R;
 
 import java.util.Random;
 
@@ -34,7 +36,6 @@ public class WordVsWordsFragment extends Fragment {
     private static final String ARG_OPTION1 = "option1";
     private static final String ARG_OPTION2 = "option2";
     private static final String ARG_OPTION3 = "option3";
-    private static final String ARG_OPTION4 = "option4";
     private static final String ARG_RIGHT_WORD = "rightWord";
 
     private String mWord;
