@@ -38,15 +38,18 @@
         <activity
             android:name=".ui.RecordAudioActivity"
             android:theme="@android:style/Theme.Holo.Dialog" />
-
         <activity
             android:name=".ui.PracticeYourEnglishActivity"
             android:label="@string/title_activity_practice_your_english"
             android:parentActivityName=".ui.HomeActivity" />
-
         <activity
             android:name=".ui.WordVsWordsActivity"
             android:label="@string/title_activity_word_vs_words"
+            android:parentActivityName=".ui.PracticeYourEnglishActivity" />
+
+        <activity
+            android:name=".ui.WordVsImagesActivity"
+            android:label="@string/title_activity_word_vs_images"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
     </application>
 
