@@ -11,8 +11,6 @@ import com.example.android.yourenglishvocabulary.R;
 public class WordVsWordsActivity extends AppCompatActivity
         implements AnimationsWordVsWordsFragment.OnFragmentInteractionListener {
 
-    private static final String TAG = "WordVsWordsActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
