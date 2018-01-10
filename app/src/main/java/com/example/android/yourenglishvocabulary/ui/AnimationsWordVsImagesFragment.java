@@ -101,7 +101,7 @@ public class AnimationsWordVsImagesFragment extends Fragment
 
     @Override
     public void onWordVsImagesFragmentInteraction(View view) {
-        Log.d(TAG, "Click en Fragment of Animation");
+        Log.d(TAG, "Click in Fragment of Animation");
         currentPositionQuestion++;
         updateFragment(currentPositionQuestion, view);
     }
