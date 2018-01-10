@@ -46,10 +46,14 @@
             android:name=".ui.WordVsWordsActivity"
             android:label="@string/title_activity_word_vs_words"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
-
         <activity
             android:name=".ui.WordVsImagesActivity"
             android:label="@string/title_activity_word_vs_images"
+            android:parentActivityName=".ui.PracticeYourEnglishActivity" />
+
+        <activity
+            android:name=".ui.SoundVsImagesActivity"
+            android:label="@string/title_activity_sound_vs_images"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
     </application>
 

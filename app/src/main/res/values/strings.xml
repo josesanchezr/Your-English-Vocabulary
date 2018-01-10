@@ -10,6 +10,7 @@
     <string name="title_activity_practice_your_english">Practice Your English!</string>
     <string name="title_activity_word_vs_words">Word vs Words!</string>
     <string name="title_activity_word_vs_images">Word vs Images!</string>
+    <string name="title_activity_sound_vs_images">Sound vs Images!</string>
 
     <string name="tab_text_1">Word</string>
     <string name="tab_text_2">Examples</string>
@@ -40,6 +41,7 @@
     <string name="image_vs_words_text">Image vs Words</string>
     <string name="word_text"><u>Word</u></string>
     <string name="options_text"><u>Options</u></string>
+    <string name="play_to_listening_text"><u>Play to Listening!</u></string>
     <string name="valid_text">Valid</string>
     <string name="next_text">Next</string>
     <string name="option3_text">option 3</string>
