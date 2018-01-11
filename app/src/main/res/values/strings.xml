@@ -11,6 +11,7 @@
     <string name="title_activity_word_vs_words">Word vs Words!</string>
     <string name="title_activity_word_vs_images">Word vs Images!</string>
     <string name="title_activity_sound_vs_images">Sound vs Images!</string>
+    <string name="title_activity_image_vs_words">Image vs Words!</string>
 
     <string name="tab_text_1">Word</string>
     <string name="tab_text_2">Examples</string>
