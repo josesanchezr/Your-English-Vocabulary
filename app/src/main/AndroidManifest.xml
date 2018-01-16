@@ -63,7 +63,7 @@
             android:label="@string/title_activity_sound_vs_words"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
 
-        <receiver android:name=".PracticeNowAppWidget">
+        <receiver android:name=".widget.PracticeNowAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

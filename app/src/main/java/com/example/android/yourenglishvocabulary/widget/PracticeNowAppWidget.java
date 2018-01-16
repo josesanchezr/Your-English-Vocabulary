@@ -1,4 +1,4 @@
-package com.example.android.yourenglishvocabulary;
+package com.example.android.yourenglishvocabulary.widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
+import com.example.android.yourenglishvocabulary.R;
 import com.example.android.yourenglishvocabulary.ui.WordVsWordsActivity;
 
 /**
