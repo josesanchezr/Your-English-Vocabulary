@@ -8,8 +8,7 @@ import android.os.Bundle;
 
 import com.example.android.yourenglishvocabulary.R;
 
-public class WordVsWordsActivity extends AppCompatActivity
-        implements AnimationsWordVsWordsFragment.OnFragmentInteractionListener {
+public class WordVsWordsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +21,5 @@ public class WordVsWordsActivity extends AppCompatActivity
         AnimationsWordVsWordsFragment animationsWordVsWordsFragment = new AnimationsWordVsWordsFragment();
         fragmentTransaction.add(R.id.word_vs_words_fragment, animationsWordVsWordsFragment);
         fragmentTransaction.commit();
-    }
-
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

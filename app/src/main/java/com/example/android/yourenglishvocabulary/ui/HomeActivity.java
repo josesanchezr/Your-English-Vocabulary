@@ -11,7 +11,7 @@ import com.example.android.yourenglishvocabulary.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.save_new_word_button)
     Button saveNewWordButton;

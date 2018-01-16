@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.example.android.yourenglishvocabulary.R;
 
-public class ImageVsWordsActivity extends AppCompatActivity {
+public class ImageVsWordsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

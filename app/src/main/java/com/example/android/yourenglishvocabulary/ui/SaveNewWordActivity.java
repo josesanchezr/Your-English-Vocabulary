@@ -37,7 +37,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SaveNewWordActivity extends AppCompatActivity implements TabWordFragment.ImageViewFromTabWordFragment {
+public class SaveNewWordActivity extends BaseActivity implements TabWordFragment.ImageViewFromTabWordFragment {
 
     private static final String TAG = "SaveNewWordActivity";
 
@@ -130,28 +130,6 @@ public class SaveNewWordActivity extends AppCompatActivity implements TabWordFra
                 permissionToRecordAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 break;
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_save_new_word, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     /**
