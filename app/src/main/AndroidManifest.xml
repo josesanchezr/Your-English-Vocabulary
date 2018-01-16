@@ -58,11 +58,20 @@
             android:name=".ui.ImageVsWordsActivity"
             android:label="@string/title_activity_image_vs_words"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
-
         <activity
             android:name=".ui.SoundVsWordsActivity"
             android:label="@string/title_activity_sound_vs_words"
             android:parentActivityName=".ui.PracticeYourEnglishActivity" />
+
+        <receiver android:name=".PracticeNowAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/practice_now_app_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

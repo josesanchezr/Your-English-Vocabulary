@@ -50,6 +50,8 @@
     <string name="option4_text">option 4</string>
     <string name="option2_text">option 2</string>
     <string name="option1_text">option 1</string>
+    <string name="appwidget_text">Practice Now!</string>
+    <string name="add_widget">Add widget</string>
 
 
 </resources>
