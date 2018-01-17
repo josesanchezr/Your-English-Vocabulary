@@ -14,11 +14,16 @@
     <string name="title_activity_image_vs_words">Image vs Words!</string>
     <string name="title_activity_sound_vs_words">Sound vs Words!</string>
 
+    <!-- menu items -->
+    <string name="action_settings">Settings your practice</string>
+    <string name="action_save_new_word">Save New Word</string>
+    <string name="action_practice">Practice</string>
+    <string name="action_exit">Exit</string>
+
     <string name="tab_text_1">Word</string>
     <string name="tab_text_2">Examples</string>
     <string name="word_english_text">Word in English</string>
     <string name="word_spanish_text">Word in Spanish</string>
-    <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="kind_word_text">Kind of Word</string>
     <string name="pronoun_text">Pronoun</string>

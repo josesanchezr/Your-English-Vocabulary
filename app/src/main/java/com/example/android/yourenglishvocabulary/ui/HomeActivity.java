@@ -13,6 +13,8 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends BaseActivity {
 
+    public static final String EXIT_APP = "exitApp";
+
     @BindView(R.id.save_new_word_button)
     Button saveNewWordButton;
 
@@ -23,6 +25,12 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        if (getIntent().getBooleanExtra(EXIT_APP, false)) {
+            finish();
+            return; // add this to prevent from doing unnecessary stuffs
+        }
+
         ButterKnife.bind(this);
 
         saveNewWordButton.setOnClickListener((view) -> {
