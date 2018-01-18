@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "588622889863",
-    "project_id": "firebase-your-english-vocabula"
+    "firebase_url": "https://fir-your-english-vocabula.firebaseio.com",
+    "project_id": "firebase-your-english-vocabula",
+    "storage_bucket": "firebase-your-english-vocabula.appspot.com"
   },
   "client": [
     {
@@ -12,6 +14,10 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "588622889863-1qamcmr3drppsohoi3tb2a7kd42qqkg3.apps.googleusercontent.com",
+          "client_type": 3
+        },
         {
           "client_id": "588622889863-o54f7j9bscajim2ttrh7g3kp8u4vesd8.apps.googleusercontent.com",
           "client_type": 3
