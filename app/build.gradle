@@ -43,6 +43,9 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile "com.google.android.gms:play-services-auth:$playServiceVersion"
     compile "com.google.android.gms:play-services-drive:$playServiceVersion"
+
+    compile "com.android.support:preference-v7:$supportLibraryVersion"
+    compile "com.android.support:preference-v14:$supportLibraryVersion"
 }
 
 apply plugin: 'com.google.gms.google-services'

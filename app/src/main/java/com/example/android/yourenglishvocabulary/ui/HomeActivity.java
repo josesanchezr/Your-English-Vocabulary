@@ -1,8 +1,10 @@
 package com.example.android.yourenglishvocabulary.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,6 +34,8 @@ public class HomeActivity extends BaseActivity {
         }
 
         ButterKnife.bind(this);
+
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         saveNewWordButton.setOnClickListener((view) -> {
             Intent intent = new Intent(view.getContext(), SaveNewWordActivity.class);

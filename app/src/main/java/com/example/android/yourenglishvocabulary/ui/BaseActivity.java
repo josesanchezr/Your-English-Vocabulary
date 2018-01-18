@@ -28,6 +28,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.action_save_new_word:
                 Intent intentSave = new Intent(this, SaveNewWordActivity.class);

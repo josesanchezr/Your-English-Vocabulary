@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.ListPreference
+        android:defaultValue="2"
+        android:dialogTitle="@string/one_summary_setting"
+        android:entries="@array/listArrayOneSetting"
+        android:entryValues="@array/listValuesOneSetting"
+        android:key="one_setting"
+        android:summary="@string/one_summary_setting"
+        android:title="@string/one_title_setting" />
+
+    <android.support.v14.preference.MultiSelectListPreference
+        android:defaultValue="@array/empty_array"
+        android:dialogTitle="@string/two_summary_setting"
+        android:entries="@array/listArrayTwoSetting"
+        android:entryValues="@array/listValuesTwoSetting"
+        android:key="two_setting"
+        android:summary="@string/two_summary_setting"
+        android:title="@string/two_title_setting" />
+
+    <com.example.android.yourenglishvocabulary.ui.TimePreference
+        style="@style/AppPreference.DialogPreference"
+        android:defaultValue="90"
+        android:key="three_setting"
+        android:summary="@string/three_summary_setting"
+        android:title="@string/three_title_setting" />
+
+</android.support.v7.preference.PreferenceScreen>

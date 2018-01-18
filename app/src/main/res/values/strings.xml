@@ -13,6 +13,7 @@
     <string name="title_activity_sound_vs_images">Sound vs Images!</string>
     <string name="title_activity_image_vs_words">Image vs Words!</string>
     <string name="title_activity_sound_vs_words">Sound vs Words!</string>
+    <string name="title_activity_settings">Settings</string>
 
     <!-- menu items -->
     <string name="action_settings">Settings your practice</string>
@@ -57,6 +58,13 @@
     <string name="option1_text">option 1</string>
     <string name="appwidget_text">Practice Now!</string>
     <string name="add_widget">Add widget</string>
+    <string name="one_title_setting">Times to practice per day</string>
+    <string name="one_summary_setting">How many times will you practice english per day?</string>
+    <string name="two_title_setting">Days to practice</string>
+    <string name="two_summary_setting">What days of week will you practice English?</string>
+    <string name="three_title_setting">Time</string>
+    <string name="three_summary_setting">What time will you start to practice English?</string>
+    <string name="default_value_three_setting">9:30</string>
 
 
 </resources>
