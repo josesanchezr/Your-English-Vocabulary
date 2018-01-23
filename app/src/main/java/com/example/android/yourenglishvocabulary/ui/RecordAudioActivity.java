@@ -72,7 +72,7 @@ public class RecordAudioActivity extends Activity implements VoiceView.OnRecordL
                 }
             });
         } catch (IOException e) {
-            Toast.makeText(this, "MediaRecorder prepare failed!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.mediarecorder_failed), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }

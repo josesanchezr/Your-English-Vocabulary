@@ -66,5 +66,23 @@
     <string name="three_summary_setting">What time will you start to practice English?</string>
     <string name="default_value_three_setting">9:30</string>
 
+    <string name="words_in_english_less_than_zero">There aren\'t words to make the questions</string>
+    <string name="words_in_english_less_than_position">There isn\'t more words</string>
+    <string name="words_less_than_4">You must save aless 4 words</string>
+    <string name="word_english_empty">Word in English is empty</string>
+    <string name="word_spanish_empty">Word in Spanish is empty</string>
+    <string name="kind_word_not_selected">Kind of Word is not selected</string>
+    <string name="url_image_empty">Url from the image is empty</string>
+    <string name="action">Action</string>
+    <string name="word_saved_with_success">The word was inserted with success</string>
+    <string name="word_updated_with_success">The word was updated with success</string>
+    <string name="select_one_option">Please, you must select one option</string>
+    <string name="right_answer">Right answer</string>
+    <string name="wrong_answer">Wrong answer</string>
+    <string name="mediarecorder_failed">MediaRecorder prepare failed!</string>
+    <string name="must_save_a_word_first">You must save a word first</string>
+    <string name="add_one_example">Add at least one example</string>
+    <string name="examples_saved">Examples were added</string>
+
 
 </resources>

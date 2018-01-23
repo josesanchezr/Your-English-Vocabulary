@@ -63,60 +63,58 @@ public class AnimationsWordVsWordsFragment extends Fragment
 
     private void buildQuestions(Cursor cursor, int maxQuestions) {
         Log.d(TAG, "Build questions");
-        if (cursor != null) {
-            int indexWordEnglish = cursor.getColumnIndex(WordsContract.WordsEntry.COLUMN_WORD_ENGLISH);
-            int indexWordSpanish = cursor.getColumnIndex(WordsContract.WordsEntry.COLUMN_WORD_SPANISH);
+        int indexWordEnglish = cursor.getColumnIndex(WordsContract.WordsEntry.COLUMN_WORD_ENGLISH);
+        int indexWordSpanish = cursor.getColumnIndex(WordsContract.WordsEntry.COLUMN_WORD_SPANISH);
 
-            int count = cursor.getCount();
-            Log.d(TAG, "Number of rows in the cursor " + count);
-            Random random = new Random();
-            int indexPosition = random.nextInt(count);
-            Log.d(TAG, "index position " + indexPosition);
-            int currentPosition;
+        int count = cursor.getCount();
+        Log.d(TAG, "Number of rows in the cursor " + count);
+        Random random = new Random();
+        int indexPosition = random.nextInt(count);
+        Log.d(TAG, "index position " + indexPosition);
+        int currentPosition;
 
-            String wordEnglish;
-            String wordSpanish;
+        String wordEnglish;
+        String wordSpanish;
 
-            wordsInEnglish = new ArrayList<>();
-            mapWordVsWords = new HashMap<>();
+        wordsInEnglish = new ArrayList<>();
+        mapWordVsWords = new HashMap<>();
 
-            while (cursor.moveToPosition(indexPosition)) {
-                currentPosition = cursor.getPosition();
-                Log.d(TAG, "current position " + currentPosition);
-                wordEnglish = cursor.getString(indexWordEnglish);
-                wordSpanish = cursor.getString(indexWordSpanish);
+        while (cursor.moveToPosition(indexPosition)) {
+            currentPosition = cursor.getPosition();
+            Log.d(TAG, "current position " + currentPosition);
+            wordEnglish = cursor.getString(indexWordEnglish);
+            wordSpanish = cursor.getString(indexWordSpanish);
 
-                if (!mapWordVsWords.containsKey(wordEnglish)) {
-                    List<String> wordsInSpanish = new ArrayList<>();
-                    wordsInSpanish.add(wordSpanish);
-                    Log.d(TAG, "Added the word " + wordEnglish);
+            if (!mapWordVsWords.containsKey(wordEnglish)) {
+                List<String> wordsInSpanish = new ArrayList<>();
+                wordsInSpanish.add(wordSpanish);
+                Log.d(TAG, "Added the word " + wordEnglish);
 
-                    while (wordsInSpanish.size() < 4) {
-                        indexPosition = random.nextInt(count);
-                        cursor.moveToPosition(indexPosition);
-                        Log.d(TAG, "New index position " + indexPosition);
-                        if (currentPosition != indexPosition) {
-                            wordSpanish = cursor.getString(indexWordSpanish);
-                            if (!wordsInSpanish.contains(wordSpanish)) {
-                                wordsInSpanish.add(wordSpanish);
-                                Log.d(TAG, "Added the word in Spanish " + wordSpanish);
-                            }
+                while (wordsInSpanish.size() < 4) {
+                    indexPosition = random.nextInt(count);
+                    cursor.moveToPosition(indexPosition);
+                    Log.d(TAG, "New index position " + indexPosition);
+                    if (currentPosition != indexPosition) {
+                        wordSpanish = cursor.getString(indexWordSpanish);
+                        if (!wordsInSpanish.contains(wordSpanish)) {
+                            wordsInSpanish.add(wordSpanish);
+                            Log.d(TAG, "Added the word in Spanish " + wordSpanish);
                         }
                     }
-                    mapWordVsWords.put(wordEnglish, wordsInSpanish);
-                    wordsInEnglish.add(wordEnglish);
-                    Log.d(TAG, "Added the word " + wordEnglish + " to the list");
                 }
-
-                if (mapWordVsWords.size() == maxQuestions) {
-                    break;
-                } else if (mapWordVsWords.size() == count) {
-                    break;
-                }
-                indexPosition = random.nextInt(count);
+                mapWordVsWords.put(wordEnglish, wordsInSpanish);
+                wordsInEnglish.add(wordEnglish);
+                Log.d(TAG, "Added the word " + wordEnglish + " to the list");
             }
-            Log.d(TAG, "Builded questions " + mapWordVsWords.size());
+
+            if (mapWordVsWords.size() == maxQuestions) {
+                break;
+            } else if (mapWordVsWords.size() == count) {
+                break;
+            }
+            indexPosition = random.nextInt(count);
         }
+        Log.d(TAG, "Builded questions " + mapWordVsWords.size());
     }
 
     private void createInitialFragment() {
@@ -128,7 +126,7 @@ public class AnimationsWordVsWordsFragment extends Fragment
                     .commit();
         } else {
             Toast.makeText(getContext(),
-                    "There aren't words to make the questions",
+                    getString(R.string.words_in_english_less_than_zero),
                     Toast.LENGTH_LONG)
                     .show();
         }
@@ -168,7 +166,7 @@ public class AnimationsWordVsWordsFragment extends Fragment
             fragmentTransaction.commitAllowingStateLoss();
 
         } else {
-            Snackbar.make(view, "There isn't more words", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view, getString(R.string.words_in_english_less_than_position), Snackbar.LENGTH_SHORT).show();
         }
     }
 
@@ -205,8 +203,12 @@ public class AnimationsWordVsWordsFragment extends Fragment
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         Log.d(TAG, "Receiving the data from the Loader");
         maxQuestions = 10;
-        buildQuestions(data, maxQuestions);
-        createInitialFragment();
+        if (data != null & data.getCount() >= 4) {
+            buildQuestions(data, maxQuestions);
+            createInitialFragment();
+        } else {
+            Toast.makeText(getContext(), getString(R.string.words_less_than_4), Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

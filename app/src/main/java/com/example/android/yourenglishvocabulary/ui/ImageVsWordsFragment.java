@@ -225,7 +225,7 @@ public class ImageVsWordsFragment extends Fragment {
     private void validAnswer(View view) {
         if (selectedOptionInt == 0) {
             isValidatedQuestion = false;
-            Snackbar.make(view, "Please, you must select one option", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(view, getString(R.string.select_one_option), Snackbar.LENGTH_LONG).show();
         } else {
             if (selectedOptionRight == selectedOptionInt) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -235,7 +235,7 @@ public class ImageVsWordsFragment extends Fragment {
                     changeButtonColor(selectedOptionInt, getResources().getColor(R.color.rightAnswer));
                     validButton.setBackgroundColor(getResources().getColor(R.color.rightAnswer));
                 }
-                Snackbar.make(view, "Right answer.", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, getString(R.string.right_answer), Snackbar.LENGTH_LONG).show();
             } else {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     changeButtonColor(selectedOptionInt, getResources().getColor(R.color.wrongAnswer, null));
@@ -244,7 +244,7 @@ public class ImageVsWordsFragment extends Fragment {
                     changeButtonColor(selectedOptionInt, getResources().getColor(R.color.wrongAnswer));
                     validButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswer));
                 }
-                Snackbar.make(view, "Wrong answer.", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, getString(R.string.wrong_answer), Snackbar.LENGTH_LONG).show();
             }
             validButton.setText(getResources().getString(R.string.next_text));
         }

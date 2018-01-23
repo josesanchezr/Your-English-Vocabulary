@@ -143,7 +143,7 @@ public class TabExamplesFragment extends Fragment {
 
     private void recordAudioExample(View view, int example) {
         if (TextUtils.isEmpty(TabWordFragment.word)) {
-            showMessage("You must save a word first", view);
+            showMessage(getString(R.string.must_save_a_word_first), view);
             return;
         }
         Intent intent = new Intent(view.getContext(), RecordAudioActivity.class);
@@ -162,7 +162,7 @@ public class TabExamplesFragment extends Fragment {
 
     private void startPlaying(String fileName, View view) {
         if (TextUtils.isEmpty(TabWordFragment.word)) {
-            showMessage("You must save a word first", view);
+            showMessage(getString(R.string.must_save_a_word_first), view);
             return;
         }
         mPlayer = new MediaPlayer();
@@ -178,7 +178,7 @@ public class TabExamplesFragment extends Fragment {
 
     private void showMessage(String message, View view) {
         Snackbar.make(view, message, Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+                .setAction(getString(R.string.action), null).show();
         return;
     }
 
@@ -200,11 +200,11 @@ public class TabExamplesFragment extends Fragment {
             isExamples = true;
         }
         if (!isExamples) {
-            showMessage("Add at least one example", view);
+            showMessage(getString(R.string.add_one_example), view);
             return;
         }
         if (TabWordFragment.idWord == 0) {
-            showMessage("You must save a word first", view);
+            showMessage(getString(R.string.must_save_a_word_first), view);
             return;
         }
 
@@ -222,7 +222,7 @@ public class TabExamplesFragment extends Fragment {
                 null);
 
         if (mRowsUpdated > 0) {
-            showMessage("Examples were added to the word with id: " + TabWordFragment.idWord, view);
+            showMessage(getString(R.string.examples_saved), view);
         }
     }
 }

@@ -93,7 +93,7 @@ public class AnimationsImageVsWordsFragment extends Fragment
             fragmentTransaction.replace(R.id.content_image_vs_words_fragment, nextFragment);
             fragmentTransaction.commitAllowingStateLoss();
         } else {
-            Snackbar.make(view, "There isn't more words", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view, getString(R.string.words_in_english_less_than_position), Snackbar.LENGTH_SHORT).show();
         }
     }
 

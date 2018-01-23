@@ -51,6 +51,8 @@ public class SaveNewWordActivity extends BaseActivity implements TabWordFragment
     public static final String EXAMPLES_TAG = "EXAMPLES";
 
     private static final int REQUEST_CODE_SIGN_IN = 0;
+    private static final int WORDS_POSITION = 0;
+    private static final int EXAMPLES_POSITION = 1;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -146,10 +148,10 @@ public class SaveNewWordActivity extends BaseActivity implements TabWordFragment
         public Fragment getItem(int position) {
             // returning the current tab
             switch (position) {
-                case 0:
+                case WORDS_POSITION:
                     tabWordFragment = new TabWordFragment();
                     return tabWordFragment;
-                case 1:
+                case EXAMPLES_POSITION:
                     tabExamplesFragment = new TabExamplesFragment();
                     return tabExamplesFragment;
                 default:

@@ -152,29 +152,32 @@ public class TabWordFragment extends Fragment {
     }
 
     private void insertWord(View view) {
-        if (TextUtils.isEmpty(wordEnglishEditText.getText().toString())) {
-            Snackbar.make(view, "Word in English is empty", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+        if (TextUtils.isEmpty(wordEnglishEditText.getText().toString()) ||
+                TextUtils.isEmpty(wordEnglishEditText.getText().toString().trim())) {
+            Snackbar.make(view, getString(R.string.word_english_empty), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.action), null).show();
             wordEnglishEditText.requestFocus();
             return;
         }
 
-        if (TextUtils.isEmpty(wordSpanishEditText.getText().toString())) {
-            Snackbar.make(view, "Word in Spanish is empty", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+        if (TextUtils.isEmpty(wordSpanishEditText.getText().toString()) ||
+                TextUtils.isEmpty(wordSpanishEditText.getText().toString().trim())) {
+            Snackbar.make(view, getString(R.string.word_spanish_empty), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.action), null).show();
             wordSpanishEditText.requestFocus();
             return;
         }
 
         if (TextUtils.isEmpty(selectedKindWord)) {
-            Snackbar.make(view, "Kind of Word is not selected", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            Snackbar.make(view, getString(R.string.kind_word_not_selected), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.action), null).show();
             return;
         }
 
-        if (TextUtils.isEmpty(urlImageEditText.getText().toString())) {
-            Snackbar.make(view, "Url from the image is empty", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+        if (TextUtils.isEmpty(urlImageEditText.getText().toString()) ||
+                TextUtils.isEmpty(urlImageEditText.getText().toString().trim())) {
+            Snackbar.make(view, getString(R.string.url_image_empty), Snackbar.LENGTH_LONG)
+                    .setAction(getString(R.string.action), null).show();
             urlImageEditText.requestFocus();
             return;
         }
@@ -201,9 +204,8 @@ public class TabWordFragment extends Fragment {
             if (id > 0) {
                 idWord = id;
                 word = wordEnglishEditText.getText().toString();
-                Snackbar.make(view, "The word " + wordEnglishEditText.getText().toString() +
-                        " was inserted with success with id: " + id, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, getString(R.string.word_saved_with_success), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.action), null).show();
                 updateImage(urlImageEditText.getText().toString(), wordEnglishEditText.getText().toString());
             }
         } else if (cursor.getCount() > 0) {
@@ -221,9 +223,8 @@ public class TabWordFragment extends Fragment {
                 if (mRowsUpdated > 0) {
                     idWord = Long.parseLong(id);
                     word = wordEnglishEditText.getText().toString();
-                    Snackbar.make(view, "The word " + wordEnglishEditText.getText().toString() +
-                            " was updated with success with id: " + idWord, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Snackbar.make(view, getString(R.string.word_updated_with_success), Snackbar.LENGTH_LONG)
+                            .setAction(getString(R.string.action), null).show();
                     updateImage(urlImageEditText.getText().toString(), wordEnglishEditText.getText().toString());
                 }
             }
