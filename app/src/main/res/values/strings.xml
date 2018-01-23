@@ -83,6 +83,10 @@
     <string name="must_save_a_word_first">You must save a word first</string>
     <string name="add_one_example">Add at least one example</string>
     <string name="examples_saved">Examples were added</string>
+    <string name="describe_image_save_word">Image Save New Word</string>
+    <string name="describe_image_vs_words">Image of Image vs Words</string>
+    <string name="play_sound">Play to Listening Sound</string>
+    <string name="save_sound">Save Sound</string>
 
 
 </resources>

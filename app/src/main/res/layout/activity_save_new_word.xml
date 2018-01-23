@@ -30,7 +30,8 @@
             android:id="@+id/image_new_word_imageview"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:contentDescription="@string/describe_image_save_word"/>
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"

@@ -39,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:contentDescription="@string/play_sound"
                 android:src="@android:drawable/ic_media_play"
                 android:tint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="@id/container_word_english"
@@ -51,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:contentDescription="@string/save_sound"
                 android:src="@android:drawable/ic_btn_speak_now"
                 android:tint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="@id/container_word_english"
@@ -166,6 +168,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/save_new_word_text"
         android:elevation="@dimen/fab_elevation"
         app:pressedTranslationZ="@dimen/fab_pressed"
         app:srcCompat="@android:drawable/ic_menu_save" />
