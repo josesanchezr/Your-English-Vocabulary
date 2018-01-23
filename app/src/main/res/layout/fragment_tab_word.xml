@@ -169,7 +169,6 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="@string/save_new_word_text"
-        android:elevation="@dimen/fab_elevation"
         app:pressedTranslationZ="@dimen/fab_pressed"
         app:srcCompat="@android:drawable/ic_menu_save" />
 
