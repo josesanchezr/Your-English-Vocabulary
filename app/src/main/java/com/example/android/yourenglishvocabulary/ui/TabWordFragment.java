@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,11 +24,16 @@ import android.widget.RadioGroup;
 import com.example.android.yourenglishvocabulary.R;
 import com.example.android.yourenglishvocabulary.audio.MediaRecordUtil;
 import com.example.android.yourenglishvocabulary.data.WordsContract;
+import com.example.android.yourenglishvocabulary.translate.TranslateController;
+import com.example.android.yourenglishvocabulary.translate.TranslateData;
 
 import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by joseluis on 25/11/2017.
@@ -63,11 +69,14 @@ public class TabWordFragment extends Fragment {
     public static String word;
     private MediaPlayer mPlayer;
 
+    private TranslateController translateController;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         idWord = 0;
         word = "";
+        translateController = new TranslateController();
     }
 
     @Override
@@ -91,7 +100,19 @@ public class TabWordFragment extends Fragment {
             startPlaying();
         });
 
+        wordEnglishEditText.setOnFocusChangeListener(((view, b) -> {
+            if (!(TextUtils.isEmpty(wordEnglishEditText.getText().toString()) ||
+                    TextUtils.isEmpty(wordEnglishEditText.getText().toString().trim()))) {
+                translateWord(wordEnglishEditText.getText().toString());
+            }
+        }));
+
         return rootView;
+    }
+
+    private void translateWord(String text) {
+        Log.d(TAG, "Word in English: " + text);
+        new TranslateWordTask().execute(text);
     }
 
     @Override
@@ -226,6 +247,30 @@ public class TabWordFragment extends Fragment {
                     Snackbar.make(view, getString(R.string.word_updated_with_success), Snackbar.LENGTH_LONG)
                             .setAction(getString(R.string.action), null).show();
                     updateImage(urlImageEditText.getText().toString(), wordEnglishEditText.getText().toString());
+                }
+            }
+        }
+    }
+
+    private class TranslateWordTask extends AsyncTask<String, Void, Response<TranslateData>> {
+
+        @Override
+        protected Response<TranslateData> doInBackground(String... text) {
+            Call<TranslateData> call = translateController.translateService.translateWord(text[0]);
+            Response<TranslateData> response = null;
+            try {
+                response = call.execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(Response<TranslateData> response) {
+            if (response.isSuccessful()) {
+                if (response.body() != null && response.body().getText() != null) {
+                    wordSpanishEditText.setText(response.body().getText().get(0));
                 }
             }
         }

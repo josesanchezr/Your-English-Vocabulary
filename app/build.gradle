@@ -52,6 +52,8 @@ dependencies {
     compile "com.google.android.gms:play-services-drive:$playServiceVersion"
     compile "com.android.support:preference-v7:$supportLibraryVersion"
     compile "com.android.support:preference-v14:$supportLibraryVersion"
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
